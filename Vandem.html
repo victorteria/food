@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Platform</title>
+</head>
+
+<body style="margin:0; font-family:'Segoe UI', Arial, sans-serif; background:#0a0a0a; color:white;">
+
+<div style="display:flex; justify-content:space-between; align-items:center; padding:20px 5%; flex-wrap:wrap;">
+  <h2 style="margin:0; font-size:24px; color:white;">FoodApp</h2>
+  <div style="margin-top:10px;">
+    <button onclick="login()" 
+            style="padding:10px 20px; background:transparent; border:1px solid #d1d5db; color:white; border-radius:8px; margin-right:10px; cursor:pointer; transition:0.3s;"
+            onmouseover="this.style.background='#1a1a1a';" onmouseout="this.style.background='transparent';">
+      Sign In
+    </button>
+    <button onclick="browse()" 
+            style="padding:10px 20px; background:#ff6700; border:none; color:white; border-radius:8px; cursor:pointer; transition:0.3s;"
+            onmouseover="this.style.background='#e65a00';" onmouseout="this.style.background='#ff6700';">
+      Browse
+    </button>
+  </div>
+</div>
+
+<div style="text-align:center; padding:80px 20px;">
+  <h1 style="font-size:48px; margin:0;">Good Food. <span style="color:#ff6700;">Fast Delivery.</span></h1>
+  <p style="max-width:600px; margin:20px auto; color:#d1d5db;">
+    Discover meals from top kitchens around you. Fresh, affordable, and delivered in minutes.
+  </p>
+  <button onclick="browse()" 
+          style="padding:16px 30px; background:#ff6700; border:none; border-radius:10px; color:white; font-size:16px; cursor:pointer; transition:0.3s;"
+          onmouseover="this.style.background='#e65a00';" onmouseout="this.style.background='#ff6700';">
+    Start Ordering
+  </button>
+</div>
+
+<div style="display:flex; justify-content:center; margin-bottom:80px; padding:0 10px;">
+  <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591"
+       style="width:100%; max-width:800px; border-radius:20px; box-shadow:0 20px 60px rgba(0,0,0,0.7);">
+</div>
+
+<div style="display:flex; justify-content:space-around; padding:60px 5%; background:#111111; flex-wrap:wrap; gap:20px;">
+  <div style="max-width:250px; text-align:center; transition:0.3s;" 
+       onmouseover="this.style.transform='translateY(-10px)';" onmouseout="this.style.transform='translateY(0)';">
+    <h3 style="color:white;">Fast Delivery</h3>
+    <p style="color:#d1d5db;">Get your meals delivered quickly without delays.</p>
+  </div>
+
+  <div style="max-width:250px; text-align:center; transition:0.3s;" 
+       onmouseover="this.style.transform='translateY(-10px)';" onmouseout="this.style.transform='translateY(0)';">
+    <h3 style="color:white;">Quality Meals</h3>
+    <p style="color:#d1d5db;">Carefully prepared meals from trusted vendors.</p>
+  </div>
+
+  <div style="max-width:250px; text-align:center; transition:0.3s;" 
+       onmouseover="this.style.transform='translateY(-10px)';" onmouseout="this.style.transform='translateY(0)';">
+    <h3 style="color:white;">Affordable Prices</h3>
+    <p style="color:#d1d5db;">Enjoy great food without spending too much.</p>
+  </div>
+</div>
+
+<div style="padding:80px 5%; text-align:center;">
+  <h2 style="margin-bottom:40px; color:white;">Popular Meals</h2>
+  <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
+
+    <div style="background:#111111; border-radius:15px; padding:20px; width:250px; transition:0.3s;"
+         onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+      <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" style="width:100%; border-radius:10px;">
+      <h4 style="color:white;">Burger Meal</h4>
+      <p style="color:#d1d5db;">Juicy beef burger with fries</p>
+      <button onclick="addItem('Burger')" 
+              style="padding:10px; width:100%; background:#ff6700; border:none; border-radius:8px; cursor:pointer; transition:0.3s;"
+              onmouseover="this.style.background='#e65a00';" onmouseout="this.style.background='#ff6700';">
+        Add
+      </button>
+    </div>
+
+    <div style="background:#111111; border-radius:15px; padding:20px; width:250px; transition:0.3s;"
+         onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" style="width:100%; border-radius:10px;">
+      <h4 style="color:white;">Rice Bowl</h4>
+      <p style="color:#d1d5db;">Delicious rice with sauce</p>
+      <button onclick="addItem('Rice')" 
+              style="padding:10px; width:100%; background:#ff6700; border:none; border-radius:8px; cursor:pointer; transition:0.3s;"
+              onmouseover="this.style.background='#e65a00';" onmouseout="this.style.background='#ff6700';">
+        Add
+      </button>
+    </div>
+
+    <div style="background:#111111; border-radius:15px; padding:20px; width:250px; transition:0.3s;"
+         onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" style="width:100%; border-radius:10px;">
+      <h4 style="color:white;">Healthy Salad</h4>
+      <p style="color:#d1d5db;">Fresh vegetables and toppings</p>
+      <button onclick="addItem('Salad')" 
+              style="padding:10px; width:100%; background:#ff6700; border:none; border-radius:8px; cursor:pointer; transition:0.3s;"
+              onmouseover="this.style.background='#e65a00';" onmouseout="this.style.background='#ff6700';">
+        Add
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<div id="footer" style="background:#0a0a0a; color:#d1d5db; padding:60px 20px;">
+  <div id="footerContainer" 
+       style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:40px; max-width:1200px; margin:auto;">
+
+    <div style="flex:1; min-width:220px;">
+      <h2 style="margin:0; color:white;">FoodApp</h2>
+      <p style="margin-top:15px; font-size:14px; line-height:1.6;">
+        A modern food delivery platform built for speed, convenience,
+        and great user experience.
+      </p>
+    </div>
+
+    <div style="flex:1; min-width:150px;">
+      <h4 style="color:white;">Company</h4>
+      <p onclick="nav('about')" style="margin:10px 0; cursor:pointer; transition:0.3s;" onmouseover="hover(this)" onmouseout="unhover(this)">About Us</p>
+      <p onclick="nav('careers')" style="margin:10px 0; cursor:pointer; transition:0.3s;" onmouseover="hover(this)" onmouseout="unhover(this)">Careers</p>
+      <p onclick="nav('blog')" style="margin:10px 0; cursor:pointer; transition:0.3s;" onmouseover="hover(this)" onmouseout="unhover(this)">Blog</p>
+    </div>
+
+    <div style="flex:1; min-width:150px;">
+      <h4 style="color:white;">Support</h4>
+      <p onclick="nav('help')" style="margin:10px 0; cursor:pointer; transition:0.3s;" onmouseover="hover(this)" onmouseout="unhover(this)">Help Center</p>
+      <p onclick="nav('terms')" style="margin:10px 0; cursor:pointer; transition:0.3s;" onmouseover="hover(this)" onmouseout="unhover(this)">Terms of Service</p>
+      <p onclick="nav('privacy')" style="margin:10px 0; cursor:pointer; transition:0.3s;" onmouseover="hover(this)" onmouseout="unhover(this)">Privacy Policy</p>
+    </div>
+
+    <div style="flex:1; min-width:220px;">
+      <h4 style="color:white;">Contact</h4>
+      <p style="margin:10px 0;">Email: support@foodapp.com</p>
+      <p style="margin:10px 0;">Phone: +234 000 000 0000</p>
+
+      <h4 style="margin-top:20px; color:white;">Newsletter</h4>
+      <div style="display:flex; margin-top:10px; flex-wrap:wrap;">
+        <input id="email" placeholder="Your email" 
+               style="padding:10px; border:none; outline:none; border-radius:6px 0 0 6px; flex:1; min-width:150px; margin-bottom:5px;">
+        <button onclick="subscribe()" onmouseover="btnHover(this)" onmouseout="btnOut(this)"
+                style="padding:10px 15px; border:none; background:#ff6700; color:white; border-radius:0 6px 6px 0; cursor:pointer;">
+          Join
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center; margin-top:40px; font-size:13px; color:#9ca3af;">
+    © 2026 FoodApp. All rights reserved.
+  </div>
+</div>
+
+<script>
+function login(){ alert("Login page coming soon"); }
+function browse(){ alert("Opening menu..."); }
+function addItem(item){ alert(item + " added to cart"); }
+function nav(page){ alert("Opening " + page + " page..."); }
+function subscribe(){
+  var email = document.getElementById("email").value.trim();
+  if(email === ""){ alert("Please enter your email"); }
+  else { alert("Subscribed with " + email); document.getElementById("email").value = ""; }
+}
+function hover(el){ el.style.color = "#ff6700"; el.style.transform = "translateX(5px)"; el.style.transition = "0.3s"; }
+function unhover(el){ el.style.color = "#d1d5db"; el.style.transform = "translateX(0)"; }
+function btnHover(btn){ btn.style.background = "#e65a00"; }
+function btnOut(btn){ btn.style.background = "#ff6700"; }
+function adjustLayout(){
+  var width = window.innerWidth;
+  var container = document.getElementById("footerContainer");
+  if(width < 700){ container.style.flexDirection = "column"; container.style.textAlign = "center"; }
+  else { container.style.flexDirection = "row"; container.style.textAlign = "left"; }
+}
+window.onload = adjustLayout;
+window.onresize = adjustLayout;
+</script>
+
+</body>
+</html>
